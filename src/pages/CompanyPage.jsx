@@ -5,7 +5,6 @@ function CompanyPage({ companies }) {
   const matchCompany = companies.find((company) => {
     return company.slug === companySlug;
   });
-  console.log(matchCompany);
   return (
     <div id="companyProfile">
       <h2>Company Profile</h2>
@@ -28,7 +27,7 @@ function CompanyPage({ companies }) {
               return (
                 <div className="techCard" key={tech.slug}>
                   <div>
-                    <Link to={`/tech/${tech.slug}`}>
+                    <Link to={`/tech/${tech.slug}?fromCompany=${companySlug}`}>
                       <img src={tech.image} alt="" />
                     </Link>
                   </div>
@@ -37,6 +36,9 @@ function CompanyPage({ companies }) {
               );
             })}
           </div>
+          <Link to="/" className="back-button">
+            <button>← Back to home page</button>
+          </Link>
         </>
       )}
     </div>

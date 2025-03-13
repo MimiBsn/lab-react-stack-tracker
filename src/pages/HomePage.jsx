@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 
 function HomePage({ companies }) {
-  console.log(companies);
   return (
     <div id="homePage">
       <h2>Discover Tech Stacks Used by Top Companies</h2>
